@@ -66,23 +66,23 @@ services:
   #     - 9100:9100
   #   depends_on:
   #     - es01
-  logstash:
-    image: docker.elastic.co/logstash/logstash:7.14.1
-    container_name: logstash
-    restart: on-failure
-    volumes:
-      - ./logstash.yml:/usr/share/logstash/config/logstash.yml
-      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.yml
-    networks:
-      - elastic
-    ports:
-      - "5044:5044"
-      - "5000:5000"
-      - "9600:9600"
-    environment:
-      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
-    depends_on:
-      - es01
+  #logstash:
+  #  image: docker.elastic.co/logstash/logstash:7.14.1
+  #  container_name: logstash
+  #  restart: on-failure
+  #  volumes:
+  #    - ./logstash.yml:/usr/share/logstash/config/logstash.yml
+  #    - ./logstash.conf:/usr/share/logstash/pipeline/logstash.yml
+  #  networks:
+  #    - elastic
+  #  ports:
+  #    - "5044:5044"
+  #    - "5000:5000"
+  #    - "9600:9600"
+  #  environment:
+  #    LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+  #  depends_on:
+  #    - es01
 volumes:
   data01:
     driver: local
